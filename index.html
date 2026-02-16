@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madres Estresadas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastelPink: '#d28c9f',
+                        pastelPinkLight: '#efd7de',
+                        pastelPinkDark: '#E8A7E6'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+    <div class="container mx-auto px-4 _py-12 flex-1 flex flex-col items-center justify-center">
+        <h1 class="text-3xl md:text-5xl font-bold text-pastelPink text-center mb-8 drop-shadow-lg tracking-wide">Madres Estresadas</h1>
+        <div class="hero-image-container relative w-full max-w-4xl h-96 md:h-[600px] mx-auto overflow-hidden rounded-3xl shadow-2xl">
+            <img src="images/0eff5817-9cb2-4afc-8877-627534ef02d6.webp" alt="Madre estresada" class="hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0" loading="lazy">
+            <img src="images/32103731-9f3d-486c-8a2b-e2f20edb1cc9.webp" alt="Madre estresada" class="hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0" loading="lazy">
+            <img src="images/cb77ab54-3f60-43de-bf62-5af6b5f24352.webp" alt="Madre estresada" class="hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0" loading="lazy">
+            <img src="images/f7a2385c-134e-4f98-ba0c-d05c2f271c96.webp" alt="Madre estresada" class="hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0" loading="lazy">
+        </div>
+    </div>
+    <footer class="bg-pastelPinkLight py-8 w-full mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-wrap justify-center items-center">
+                <a href="https://madresestresadas.tumblr.com/" target="_blank" rel="noopener noreferrer" class="text-pastelPink hover:text-pastelPinkDark transition-colors duration-300 text-2xl mx-4"><i class="fab fa-tumblr"></i></a>
+                <a href="https://www.facebook.com/madresestresadas/" target="_blank" rel="noopener noreferrer" class="text-pastelPink hover:text-pastelPinkDark transition-colors duration-300 text-2xl mx-4"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/madrestresada/" target="_blank" rel="noopener noreferrer" class="text-pastelPink hover:text-pastelPinkDark transition-colors duration-300 text-2xl mx-4"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/madrestresadas" target="_blank" rel="noopener noreferrer" class="text-pastelPink hover:text-pastelPinkDark transition-colors duration-300 text-2xl mx-4"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/madresestresadassinfronteras/" target="_blank" rel="noopener noreferrer" class="text-pastelPink hover:text-pastelPinkDark transition-colors duration-300 text-2xl mx-4"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tumblr.com/madresestresadas" target="_blank" rel="noopener noreferrer" class="text-pastelPink hover:text-pastelPinkDark transition-colors duration-300 text-2xl mx-4"><i class="fab fa-tumblr"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const images = document.querySelectorAll('.hero-image');
+        let currentIndex = 0;
+        const totalImages = images.length;
+
+        function nextImage() {
+            images[currentIndex].classList.remove('opacity-100');
+            images[currentIndex].classList.add('opacity-0');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.remove('opacity-0');
+            images[currentIndex].classList.add('opacity-100');
+        }
+
+        if (images.length > 0) {
+            images[0].classList.add('opacity-100');
+        }
+        setInterval(nextImage, 5000);
+    </script>
+</body>
+</html>
